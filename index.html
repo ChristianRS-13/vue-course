@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Hola mundo con Vue.js</title>
+    
 </head>
 <body>
     <div id="app">
         <h1>{{titulo}}</h1>
-        <input type="text" v-model="nuevaFruta">
+        <input type="text" v-model="nuevaFruta" @keyup.enter="agregarFruta">
         <button @click="agregarFruta">Agregar</button>
         <ul>            
             <li v-for="fruta of frutas">
-                {{fruta.cantidad}}-{{fruta.nombre}}
+                <input type="numnber" v-model.number="fruta.cantidad">
+                {{fruta.nombre}}
+                <button @click='fruta.cantidad++'>+</button>
                 <span v-if="fruta.cantidad === 0"> - Sin stock</span>
             </li>
         </ul>
+        <h4>Total: {{sumarFrutas}}</h4>
     </div>
     <!-- development version, includes helpful console warnings -->
     

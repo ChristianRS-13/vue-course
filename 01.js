@@ -8,7 +8,8 @@ const app = new Vue({
             {nombre: 'Platano', cantidad: 1},
             {nombre: 'Uvas', cantidad: 0}
         ],
-        nuevaFruta: ''
+        nuevaFruta: '',
+        total: 0
     },
     methods: {
       agregarFruta (){
@@ -21,5 +22,15 @@ const app = new Vue({
       otroMetodo (){
 
       }  
-    }, 
+    },
+    computed: {
+      sumarFrutas(){
+        this.total=0;
+        for(fruta of this.frutas){
+          this.total = this.total + fruta.cantidad;
+        }
+        return this.total;
+      }
+
+    }
 })
