@@ -1,3 +1,5 @@
+iniciar (dentro de la caepeta)
+git init
 or push an existing repository from the command line
 git remote add origin https://github.com/ChristianRS-13/vue-course.git
 git push -u origin master
